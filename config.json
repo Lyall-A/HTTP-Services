@@ -1,0 +1,31 @@
+{
+    "defaultsServiceConfig": {
+        "idChars": ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"],
+        "idLength": 10,
+        "sizeLimit": 52428800
+    },
+    "expireCheckInterval": 1800000,
+    "services": [
+        {
+            "name": "Short Links",
+            "port": 5620,
+            "serviceScriptLocation": "services/short.service.js",
+            "storeLocation": "services/short.store.json",
+            "sizeLimit": 1000,
+            "allowedMimes": [
+                "application/json"
+            ]
+        },
+        {
+            "name": "Clips",
+            "port": 5621,
+            "serviceScriptLocation": "services/clips.service.js",
+            "storeLocation": "services/clips.store.json",
+            "clipsLocation": "Clips",
+            "expireAfter": 2592000000,
+            "allowedMimes": [
+                "video/.+"
+            ]
+        }
+    ]
+}
